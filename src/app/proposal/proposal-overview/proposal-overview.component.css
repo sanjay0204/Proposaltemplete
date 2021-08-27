@@ -1,0 +1,35 @@
+.proposal {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.5;
+}
+.docment {
+  font-weight: 500;
+  line-height: 1.5;
+}
+.btn-primary
+ {
+  background-color: #433163 !important;
+
+  color: #ffffff !important;
+  border-color: #433163 !important;
+}
+.header-pic {
+  background-color: #e9ecef;
+  height: 35px;
+}
+.sample {
+  position: absolute;
+  font-size: 50px;
+  opacity: 0;
+  right: 0;
+  top: 0;
+}
+.dropdown-menu.show {
+  width: 48%;
+}
+
+.table-header {
+  background-color: #91c1e6;
+  color: #ffffff;
+}

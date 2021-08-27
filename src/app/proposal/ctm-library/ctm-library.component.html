@@ -1,0 +1,36 @@
+<div class="container-fluid p-4 my-3 mt-5 border">
+
+    <div class="row align-items-start">
+        <div class="col-12 p-r-0">
+            <div class="form-group">
+                <div class="header-pic"><span class="proposal">CTM Library</span> </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-9">
+            <div>
+                <button type="button" routerLink="/ctmlibrary/public" class="btn btn-outline-primary m-r-2">Public CTM Library</button>
+                <button type="button" routerLink="/ctmlibrary/private" class="btn btn-outline-primary ">Private CTM Library</button>
+            </div>
+        </div>
+        <div class="col">
+            <div class="btn btn-primary btn-sm w-100">
+                <span class="">Add CTM File</span>
+                <input class="sample" style="width: 100%;position: absolute;margin-top: -18px;" type="file" (change)="addCTM($event)" name="file"
+                />
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col">&nbsp;
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <router-outlet></router-outlet>
+
+        </div>
+    </div>
+</div>

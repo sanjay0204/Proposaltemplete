@@ -1,0 +1,81 @@
+<div class="container-fluid p-4 my-3 mt-5 border">
+
+    <div class="row align-items-start">
+        <div class="col-12 p-r-0">
+            <div class="form-group">
+                <div class="header-pic"><span class="proposal">User Preferences</span> </div>
+            </div>
+        </div>
+    </div>
+
+    <form name="form" (ngSubmit)="onSubmit()" #userForm="ngForm" novalidate>
+        <div class="row mb-1">
+            <label class="col-2 col-form-label"> Language:<span class="error_color">*</span></label>
+            <div class="col-5 p-0">
+                <div class="form-group">
+                    <select class="form-control" name="language" [(ngModel)]="user.language" required #language="ngModel">
+                 <option [value]="null">Select Language</option>
+                <option *ngFor="let obj of getLanguages" [value]="obj">{{obj}}</option>
+                </select>
+                </div>
+            </div>
+        </div>
+        <div class="row mb-1">
+            <label class="col-2 col-form-label"> &nbsp;</label>
+            <div class="col-5 p-0">
+                <div class="form-group">
+                <input type="checkbox" id="filterAmendmentsByLang" name="filterAmendmentsByLang" [(ngModel)]="user.filterAmendmentsByLang">&nbsp;
+                <label>Filter Amendments by Selected Language while Searching</label> 
+                </div>
+            </div>
+        </div>
+        <div class="row mb-1">
+            <label class="col-2 col-form-label"> Op Center:<span class="error_color">*</span></label>
+            <div class="col-5 p-0">
+                <!-- <input type="text" class="form-control" placeholder="Op Center" name="opCenter" [(ngModel)]="user.opCenter" aria-label="Op Center"
+                    #opCenter="ngModel"> -->
+                <div class="form-group">
+                    <select class="form-control" name="opCenter" required [(ngModel)]="user.opCenter" #opCenter="ngModel">
+                     <option [value]="null">Select Op-Center</option>
+                    <option *ngFor="let obj of opCenterVales" [value]="obj.code">{{obj.name}}</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row mb-1">
+            <label class="col-2 col-form-label"> Program:<span class="error_color">*</span></label>
+            <div class="col-5 p-0">
+                <!-- <input type="text" class="form-control" name="program" [(ngModel)]="user.program" placeholder="program" aria-label="program"
+                    #program="ngModel"> -->
+                    
+                <div class="form-group">
+                    
+                    <select class="form-control" name="program" required [(ngModel)]="user.program" #program="ngModel">
+                     <option [value]="null">Select Program</option>
+                    <option *ngFor="let obj of userProgram"  [value]="obj.code">{{obj.name}}</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="row mb-1">
+            <label class="col-2 col-form-label"> PricingCountry:<span class="error_color">*</span></label>
+            <div class="col-5 p-0">
+                <div class="form-group">                    
+                    <select class="form-control" required name="pricingCountry" [(ngModel)]="user.pricingCountry" #pricingCountry="ngModel">
+                 <option [value]="null">Select Pricing Country</option>
+                <option *ngFor="let obj of config" [value]="obj">{{obj}}</option>
+                </select>
+                </div>
+            </div>
+        </div>
+        <div class="row mb-1">
+            <div class="col-5"></div>
+            <div class="col-7 p-0">
+
+                <button type="submit" [disabled]="userForm.invalid" class="btn btn-primary">Update</button> &nbsp;
+                <button type="button" (click)="reSet()" class="btn btn-secondary my-2 mx-2">Cancel</button>
+            </div>
+        </div>
+    </form>
+</div>

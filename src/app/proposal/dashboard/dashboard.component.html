@@ -1,0 +1,109 @@
+<ngx-spinner
+  bdColor="rgba(51,51,51,0.8)"
+  size="large"
+  color="#433163"
+  fullScreen="true"
+  type="ball-spin-clockwise"
+>
+  <p style="font-size: 20px; color: white">Loading...</p>
+</ngx-spinner>
+<div class="container-fluid p-3 my-3 mt-5 border">
+    <div class="row">
+        <!-- main  -->
+        <div class="col">
+            <div class="container p-3 my-3 mt-5">
+                <div>
+                    <div class="form-group">
+                        <input type="text" class="form-control form-control-sm" id="proposalid" name="proposalid" [ngModel]="proposalid" (ngModelChange)="searchResult($event)"
+                            placeholder="Search Proposal...">
+                    </div>
+                    <h2>Recent Proposals</h2>
+
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <table class="table table-striped">
+                                <thead>
+                                </thead>
+                                <tbody>
+                                   <tr>
+                                        <td style="background-color: rgb(135, 197, 222); font-weight: bold; font-size:small; padding: 5pt;" > 
+                                            Proposal ID:
+                                        </td>
+                                        <td style="background-color: rgb(135, 197, 222);font-weight: bold; font-size:small; padding: 5pt;">
+                                            Last Modified:
+                                        </td>
+                                    </tr>
+                                    <tr *ngFor="let o of getList | slice:0:6;" >
+                                        <td style="padding: 5pt;"> 
+                                            <a href="#" routerLink="/proposaloverview/{{o.id}}">{{o.proposalId}}</a>
+                                        </td>
+                                        <td style="padding: 5pt;">
+                                            <a href="#"><label>{{o.lastModified | date:'MMM d, y HH:mm:dd'}}</label></a>
+                                        </td>
+                                    </tr>
+                      
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- side cards  -->
+        <div class="col-5">
+            <div class="col mt-3">
+                <div class="card" title="Create Proposal" routerLink="/createproposal" routerLinkActive="active">
+                    <div class="card-header">
+                        <span> <img title="Create"  
+                  src="../../../assets/images/black-24dp create proposal/1x/outline_create_black_24dp.png" alt=""> 
+                  <b style="cursor: pointer;"> Create
+                  Proposal</b> </span>
+                    </div>
+                    <div class="card-body" style="background:#8661C5">
+                        <p class="card-text">Get started by creating a new proposal from scrach </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col mt-3">
+                <div class="card" title="Replicate Proposal" routerLink="/replicaporposal" routerLinkActive="active">
+                    <div class="card-header"> <span> <img title="Replicate"
+                  src="../../../assets/images/black-24dp replicate/1x/outline_content_copy_black_24dp.png" alt=""> <b style="cursor: pointer;"> Replicate
+                  Proposal</b> </span> </div>
+                    <div class="card-body" style="background:#91C1E6">
+                        <p class="card-text"> Get started by Replicating an existing proposal </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col mt-3">
+                <div class="card" title="Active Proposal" routerLink="/activeproposal" routerLinkActive="active">
+                    <div class="card-header"> <span> <img title="Active"
+                  src="../../../assets/images/black-24dp activeproposal/1x/outline_assignment_turned_in_black_24dp.png" alt=""> <b style="cursor: pointer;"> Active
+                  Proposal</b> </span> </div>
+                    <div class="card-body" style="background:#6AAB6A">
+                        <p class="card-text">Navigated to all Active Proposal's </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col mt-3">
+                <div class="card " title="Download Service">
+                    
+                        <div class="card-header"> 
+                            <span> 
+                                <a href="../../../assets/WordServiceSetupV2.msi">
+                            <img  title="Download"
+                            src="../../../assets/images/black-24dpdownlaod proposal/1x/outline_download_black_24dp.png" alt=""> <b> Download Amendment
+                            Edit Service</b> </a></span> </div>
+                        <div class="card-body" style="background:#FF9349">
+                            <p class="card-text">Download to edit the document offline </p>
+                        </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>

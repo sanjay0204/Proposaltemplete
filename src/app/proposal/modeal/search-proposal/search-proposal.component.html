@@ -1,0 +1,48 @@
+<div class="card">
+    <div class="card-header">
+        <div class="row">
+            <div class="col">
+                <h3>Select Amendment</h3>
+            </div>
+        </div>
+    </div>
+    <div class="card-body">
+        <div class="row">
+            <div class="col">
+                <ag-grid-angular #agGrid style="width: 100%; height: 500px;" id="myGrid" class="ag-theme-alpine" [gridOptions]="gridOptions"></ag-grid-angular>
+
+                <!-- <div class="table-responsive">
+                    <table id="example" [dtOptions]="dtOptions" datatable class=" table row-border hover">
+                        <thead class="thead-darks">
+                            <tr>
+                                <th>Code</th>
+                                <th>FileName</th>
+                                <th>Language</th>
+                                <th>Action</th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let obj of searchAmendList">
+                                <td>{{obj.code}}</td>
+                                <td>{{obj.docName}}</td>
+                                <td>{{obj.language}}</td>
+                                <td>
+                                    <span class="outCircle" (click)="viewAmendent(obj)">
+                                        <i class="fa fa-eye" style="width: 14px;"></i>
+                                    </span> &nbsp;
+                                    <span class="outCircle" (click)="addAmendent(obj)">
+                                        <i class="fa fa-plus" style="width: 14px;"></i>
+                                    </span>
+
+                                </td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div> -->
+
+            </div>
+        </div>
+    </div>
+</div>
